@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    My role on this project : CATOUILLARD Benjamin Web Developper
+    Site : http://bcatouillard.ovh
+    Linkedin : https://www.linkedin.com/in/bcatouillard/
+    Github : https://github.com/bcatouillard
+    Location : Lille, France
+    Email : contact[at]bcatouillard.ovh
+
+# TECHNOLOGY COLOPHON
+    Last update : 2020/08/13
+    CSS3, HTML5, JavaScript
+    Apache Server Configs, NodeJS

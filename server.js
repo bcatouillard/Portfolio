@@ -1,9 +1,12 @@
 // Import Express Module
 const express = require('express');
 const app = express();
+const favicon = require('serve-favicon');
 
 // Set Pug as our template engine
 app.set('view engine', 'pug');
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // serve static files from the `public` folder
 app.use(express.static(__dirname + '/public'));
@@ -16,6 +19,7 @@ const server = app.listen(7000, () => {
 // Routing / to index.pug and set the title to Accueil
 app.get('/', (req, res) => {
     res.render('index', {
-        title:  'Accueil'
+        title:  'Accueil',
+        description: 'Bienvenue sur le Portfolio de Benjamin Catouillard'
     });
 });

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:sass": "node-sass -r --output-style compressed public/sass/style.scss -o public/css",
     "watch:sass": "npm run build:sass && npm run build:sass -- -w",
-    "start": "npm run sass && npx nodemon server.js"
+    "start": "npx nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "node-sass": "^4.14.1",
     "pug": "^3.0.0",
+    "serve-favicon": "^2.5.0",
     "webpack": "^4.44.1"
   }
 }
