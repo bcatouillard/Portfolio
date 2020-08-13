@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon server.js"
+    "build:sass": "node-sass -r --output-style compressed public/sass/style.scss -o public/css",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
+    "start": "npm run sass && npx nodemon server.js"
   },
   "repository": {
     "type": "git",
