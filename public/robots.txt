@@ -1,0 +1,22 @@
+#BCATOUILLARD.OVH
+
+#LastUpdate:14/08/2020
+
+User-agent: *
+Allow: /
+
+#Pages
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /js/
+Disallow: /sass/
+
+Allow: /skills
+Allow: /projects
+Allow: /contact
+
+#Fichiers
+
+#Sitemap
+Sitemap: https://bcatouillard.ovh/sitemap.xml
