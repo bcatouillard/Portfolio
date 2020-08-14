@@ -6,7 +6,7 @@
     &__container__content{
         flex-flow: row wrap;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         text-align: center;
 
         .column{
