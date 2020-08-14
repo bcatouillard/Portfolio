@@ -1,0 +1,25 @@
+.footer{
+    background-color: $color-header;
+    padding: 1rem 1.5rem 0.5rem;
+    color: $color-white;
+
+    &__container__content{
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .column{
+            a{
+                span{
+                    color: $color-white;
+
+                    &:hover{
+                        color:$color-hover;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

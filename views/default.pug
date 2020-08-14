@@ -2,14 +2,52 @@ doctype html
 html(lang="fr")
   head
     title Benjamin Catouillard - #{title}
-    link(rel='stylesheet', href='/css/style.css')
+    block css
+      link(rel='stylesheet', href='/css/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes")
     meta(name="Content-Type" content="text/html; charset=utf-8")
-    meta(name="description" content=description)
+    meta(name="description" content=`#{description}`)
     meta(name="robots" content="INDEX,FOLLOW")
   body
-    main
-      block header
-        header.header
-          h1 #{title}
-      block content
+    nav.navbar.is-transparent.is-fixed-top(role="navigation" aria-label="main navigation")
+      div.navbar-brand
+        a.navbar-item(href="/")
+          | Benjamin Catouillard
+    
+          a.navbar-burger.burger(role="button" aria-label="menu" aria-expanded="false" data-target="navMenu")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+    
+      div#navMenu.navbar-menu
+        div.navbar-start
+          a.navbar-item(href="/skills")
+            | Compétences
+
+          a.navbar-item(href="/projects")
+            | Projets
+    
+          a.navbar-item(href="contact")
+            | Contact
+
+            
+
+    block content
+
+    block footer
+      footer.footer
+        div.container
+          div.footer__container__content.columns.is-mobile
+            div.column.has-text-centered
+              a(href="https://www.linkedin.com/bcatouillard/" target="_blank")
+                span.icon.fa-2x
+                  i.fab.fa-linkedin-in.is-large(aria-hidden="true")
+            div.column.has-text-centered.only-desk
+              p Tous droits réservés - Benjamin Catouillard
+            div.column.has-text-centered
+              a(href="https://www.github.com/bcatouillard" target="_blank")
+                span.icon.fa-2x
+                  i.fab.fa-github.is-large(aria-hidden="true")
+
+    script(src="js/navbar.js")
+    script(defer src="assets/@fortawesome/fontawesome-free/js/all.min.js")

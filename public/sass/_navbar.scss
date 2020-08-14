@@ -1,0 +1,60 @@
+.navbar{
+    background-color: $color-header;
+    &-item{
+        text-decoration: none;
+        color: $color-white;
+        font-size: 18px;
+        position: relative;
+
+        &:hover{
+            background-color: $color-main !important;
+            color: $color-hover !important;
+        }
+    }
+
+    &-brand{
+        .navbar-burger{
+            color: $color-white;
+        }
+    }
+
+    &-menu{
+        background-color: $color-header;
+    }
+}
+
+@media (min-width: $desktop){
+    .navbar{
+
+        &-brand{
+            .navbar-burger{
+                display: none;
+            }
+        }
+
+        &-item{
+            &::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0%;
+                content: '.';
+                color: transparent;
+                background: $color-hover;
+                height: 1px;
+            }
+    
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+    
+            &::after,&::before{
+                transition: all .5s;
+            }
+        }
+    }
+}
