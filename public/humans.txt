@@ -13,4 +13,4 @@
 # TECHNOLOGY COLOPHON
     Last update : 2020/08/14
     CSS3, HTML5, JavaScript, Bulma (Framework CSS)
-    Apache Server Configs, NodeJS
+    Express, NodeJS

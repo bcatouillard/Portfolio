@@ -1,0 +1,12 @@
+.hero{
+    align-items: center;
+    text-align: center;
+
+    &-body{
+        .container{
+           .title, .subtitle{
+                color: $color-white;
+           }
+        }
+    }
+}
