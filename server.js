@@ -1,5 +1,6 @@
 // Import Express Module
 const express = require('express');
+const https = require('https');
 const app = express();
 const favicon = require('serve-favicon');
 
@@ -14,10 +15,11 @@ app.use(express.static(__dirname + '/public'));
 // serve assets from node_modules
 app.use('/assets', express.static(__dirname + '/node_modules/'));
 
-// Set the server listening on port 7000
-const server = app.listen(7000, () => {
-    console.log(`Express running → PORT ${server.address().port}`);
-});
+
+https.createServer({
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+}, app).listen(7000);
 
 // Routing / to index.pug and set the title to Accueil
 app.get('/', (req, res) => {
