@@ -12,10 +12,9 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /sass/
 Disallow /assets/
-
-Allow: /skills
-Allow: /projects
-Allow: /contact
+Disallow: /skills
+Disallow: /projects
+Disallow: /contact
 
 #Fichiers
 
