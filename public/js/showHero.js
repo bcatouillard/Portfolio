@@ -1,4 +1,4 @@
-setInterval(showHeroTitle, 200);
+setInterval(showHeroTitle, 100);
 let countHeroTitle = 0;
 let heroTitleConcat = "";
 let heroTitle = "Benjamin Catouillard";
@@ -6,7 +6,7 @@ const maxCountHeroTitle = heroTitle.length;
 
 
 
-setInterval(showHeroSubtitle, 200);
+setInterval(showHeroSubtitle, 100);
 let heroSubtitle = "Développeur Web Junior";
 let heroSubtitleConct = "";
 let count = 0;
