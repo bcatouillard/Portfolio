@@ -28,9 +28,9 @@ const server = app.listen(7000, () => {
     console.log(`Express running → PORT ${server.address().port}`);
 });
 
-// Routing / to index.pug and set the title to Accueil
+// Routing / to default.pug and set the title to Accueil
 app.get('/', (req, res) => {
-    res.render('index', {
+    res.render('default', {
         title:  'Accueil',
         description: 'Bienvenue sur le Portfolio de Benjamin Catouillard'
     });
