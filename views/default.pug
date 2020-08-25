@@ -11,7 +11,7 @@ html(lang="fr")
   body
     nav.navbar.is-transparent.is-fixed-top(role="navigation" aria-label="main navigation")
       div.navbar-brand
-        a.navbar-item(href="/")
+        a.navbar-item(href="#home")
           | Benjamin Catouillard
     
           a.navbar-burger.burger(role="button" aria-label="menu" aria-expanded="false" data-target="navMenu")
@@ -21,13 +21,15 @@ html(lang="fr")
     
       div#navMenu.navbar-menu
         div.navbar-start
-          a.navbar-item(href="/skills")
+          a.navbar-item(href="#formation")
+            | Formation
+          a.navbar-item(href="#skills")
             | Compétences
 
-          a.navbar-item(href="/projects")
+          a.navbar-item(href="#projects")
             | Projets
     
-          a.navbar-item(href="contact")
+          a.navbar-item(href="#contact")
             | Contact
 
             
@@ -50,4 +52,5 @@ html(lang="fr")
                 i.fab.fa-github.is-large(aria-hidden="true")
 
     script(src="js/navbar.js")
+    script(src="js/showHero.js")
     script(defer src="assets/@fortawesome/fontawesome-free/js/all.min.js")
