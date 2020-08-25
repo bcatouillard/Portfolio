@@ -1,6 +1,6 @@
 #BCATOUILLARD.OVH
 
-#LastUpdate:19/08/2020
+#LastUpdate:25/08/2020
 
 User-agent: *
 Allow: /
@@ -12,9 +12,6 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /sass/
 Disallow /assets/
-Disallow: /skills
-Disallow: /projects
-Disallow: /contact
 
 #Fichiers
 
