@@ -7,6 +7,27 @@ html{
         flex-direction: column;
         min-height: 99.4vh;
     }
+
+    section{
+        min-height: 100vh;
+    }
+}
+
+.return-top{
+    display: none;
+    right: 5%;
+    top: 80%;
+    position: fixed;
+
+    li{
+        a{
+            color: $color-white;
+
+            &:hover{
+                color: $color-hover;
+            }
+        }
+    }
 }
 
 p,h1,h2,h3,h4,strong{
