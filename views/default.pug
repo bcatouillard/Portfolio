@@ -21,6 +21,8 @@ html(lang="fr")
     
       div#navMenu.navbar-menu
         div.navbar-start
+          a.navbar-item(href="#about")
+            | A propos
           a.navbar-item(href="#formation")
             | Formation
           a.navbar-item(href="#skills")
@@ -32,7 +34,10 @@ html(lang="fr")
           a.navbar-item(href="#contact")
             | Contact
 
-            
+    ul.return-top#toTop
+      li
+        a(href="#home").icon.fa-2x
+          i.far.fa-arrow-alt-circle-up.is-large(aria-hidden="true")
 
     include includes/index.pug
 
@@ -41,16 +46,17 @@ html(lang="fr")
       div.container
         div.footer__container__content.columns.is-mobile
           div.column.has-text-centered
-            a(href="https://www.linkedin.com/in/bcatouillard/" target="_blank")
+            a(href="https://www.linkedin.com/in/bcatouillard/" target="_blank" title="Lien vers LinkedIn" rel="noreferrer noopener")
               span.icon.fa-2x
                 i.fab.fa-linkedin-in.is-large(aria-hidden="true")
           div.column.has-text-centered.only-desk
             p Tous droits réservés - Benjamin Catouillard
           div.column.has-text-centered
-            a(href="https://www.github.com/bcatouillard" target="_blank")
+            a(href="https://www.github.com/bcatouillard" target="_blank" title="Lien vers Github" rel="noreferrer noopener")
               span.icon.fa-2x
                 i.fab.fa-github.is-large(aria-hidden="true")
 
     script(src="js/navbar.js")
     script(src="js/showHero.js")
+    script(src="js/to_top.js")
     script(defer src="assets/@fortawesome/fontawesome-free/js/all.min.js")

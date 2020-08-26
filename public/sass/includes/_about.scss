@@ -1,0 +1,29 @@
+.about{
+    &__columns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media (min-width: $desktop){
+    .about{
+        &__columns{
+            flex-flow: row wrap;
+            text-align: center;
+
+            .column{
+                p{
+                    color: $color-white;
+                    text-align: left;
+
+                    strong{
+                        color: $color-white!important;
+                    }
+                }
+            }
+        }
+    }
+}

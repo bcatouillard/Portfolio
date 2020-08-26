@@ -1,25 +1,9 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "variables";
+@import "common";
 
-@import "navbar";
-@import "footer";
-@import "header";
-@import "content";
-
-html{
-    background-color: $color-main;
-    overflow-y: unset;
-
-    body{
-        display: flex;
-        flex-direction: column;
-        min-height: 99.4vh;
-    }
-}
-
-@media (max-width: $mobile){
-    .only-desk{
-        display: none;
-    }
-}
+@import "includes/navbar";
+@import "includes/footer";
+@import "includes/header";
+@import "includes/about";
