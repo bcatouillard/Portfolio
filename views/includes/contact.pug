@@ -1,5 +1,35 @@
-extends default
-
-block content
-    section.section#contact
-        div.container
+section.section.contact__root#contact
+    div.container.contact__container
+        h2.title.is-3 Contactez moi !
+        div.form__root
+            form.form__container
+                div.field
+                    label.label(for="name") Nom :
+                    div.control
+                        input.input#name(type="text" placeholder="Nom :")
+                div.field
+                    label.label(for="firstName") Prénom :
+                    div.control
+                        input.input#firstName(type="text" placeholder="Prénom :")
+                div.field
+                    label.label(for="email") Email :
+                    div.control.has-icons-left
+                        input.input#email(type="text" placeholder="Email :")
+                        span.icon.is-small.is-left
+                            i.fas.fa-envelope
+                div.field
+                    label.label(for="subject") Sujet :
+                    div.control
+                        input.input#subject(type="text" placeholder="Sujet :")
+                div.field
+                    label.label(for="bodyMail") Message :
+                    div.control
+                        textarea.textarea#bodyMail(cols="20", rows="5",placeholder="Votre message :")
+                div.field.is-grouped
+                    div.control
+                        button.button.is-link Envoyer
+                    div.control
+                        button.button.is-link
+                            span.icon.is-small
+                                i.far.fa-address-card
+                            | Voir mon CV
