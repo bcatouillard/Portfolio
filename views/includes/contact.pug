@@ -6,25 +6,25 @@ section.section.contact__root#contact
                 div.field
                     label.label(for="name") Nom :
                     div.control
-                        input.input#name(type="text" placeholder="Nom :")
+                        input.input#name(type="text" placeholder="Nom :" required)
                 div.field
                     label.label(for="firstName") Prénom :
                     div.control
-                        input.input#firstName(type="text" placeholder="Prénom :")
+                        input.input#firstName(type="text" placeholder="Prénom :" required)
                 div.field
                     label.label(for="email") Email :
                     div.control.has-icons-left
-                        input.input#email(type="text" placeholder="Email :")
+                        input.input#email(type="text" placeholder="Email :" required)
                         span.icon.is-small.is-left
                             i.fas.fa-envelope
                 div.field
                     label.label(for="subject") Sujet :
                     div.control
-                        input.input#subject(type="text" placeholder="Sujet :")
+                        input.input#subject(type="text" placeholder="Sujet :" required)
                 div.field
                     label.label(for="bodyMail") Message :
                     div.control
-                        textarea.textarea#bodyMail(cols="20", rows="3",placeholder="Votre message :")
+                        textarea.textarea#bodyMail(cols="20", rows="3",placeholder="Votre message :" required)
                 div.field.is-grouped
                     div.control
                         button.button.is-link Envoyer
