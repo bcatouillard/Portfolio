@@ -105,6 +105,3 @@ dist
 
 # Ignore css file
 /public/css/
-
-cert.pem
-key.pem
