@@ -1,0 +1,47 @@
+.projects{
+    &__container{
+
+        &__list{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-top: 30px;
+        }
+    }
+
+    &__item{
+        color: $color-header;
+
+        &--text{
+            color: $color-header !important;
+        }
+    }
+
+    &__title{
+        color: $color-header !important;
+        text-align: center;
+    }
+}
+
+@media (min-width: $desktop){
+    .projects{
+        &__container{
+
+            &__list{
+                flex-flow: row wrap;
+            }
+        }
+
+        &__item{
+
+            &--description{
+                display: none;
+
+                &:hover{
+                    
+                }
+            }
+        }
+    }
+}
