@@ -29,3 +29,10 @@ app.get('/', (req, res) => {
         description: 'Bienvenue sur le Portfolio de Benjamin Catouillard'
     });
 });
+
+app.get('/admin', (req, res) => {
+    res.render('admin', {
+        title: 'Admin',
+        description: 'Bienvenue sur la partie administration de mon Portfolio'
+    })
+});
