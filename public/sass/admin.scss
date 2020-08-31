@@ -1,0 +1,16 @@
+@import "variables";
+
+.login{
+    &__root{
+        width: 50%;
+        margin: 0 auto;
+
+        .field{
+            width: 100%;
+        }
+    }
+}
+
+h2{
+    text-align: center;
+}
