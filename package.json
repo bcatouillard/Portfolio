@@ -23,7 +23,6 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bulma": "^0.9.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
     "node-sass": "^4.14.1",
     "pug": "^3.0.0",
     "serve-favicon": "^2.5.0",

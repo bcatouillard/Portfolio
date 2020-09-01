@@ -30,9 +30,23 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/projects/', (req, res) => {
+    res.render('seeProject', {
+        title:  'Accueil',
+        description: 'Bienvenue sur le Portfolio de Benjamin Catouillard - voici la page détaillée d\'un projet'
+    });
+});
+
 app.get('/admin', (req, res) => {
     res.render('admin', {
         title: 'Admin',
         description: 'Bienvenue sur la partie administration de mon Portfolio'
+    })
+});
+
+app.get('/admin/projects', (req, res) => {
+    res.render('addProject', {
+        title: 'Ajout d\'un projet',
+        description: 'Bienvenue sur la partie administration de mon Portfolio - ajout d\'un projet'
     })
 });
