@@ -16,6 +16,9 @@ module.exports = {
         let email = req.body.inputEmail
         let subject = req.body.inputSubject
         let content = req.body.inputBodyMail
+        let captcha = req.body['g-recaptcha-response']
+        const secretKey = dotenv.API_CAPTCHA_KEY
+        const verificatioUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + captcha
 
 
         const mailOptions = {

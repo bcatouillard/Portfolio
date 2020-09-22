@@ -37,6 +37,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     controller.handleContactForm(req)
     res.render('default', {
+        title:  'Accueil',
+        description: 'Bienvenue sur le Portfolio de Benjamin Catouillard',
         message: true,
         anchor: "contact"
     })
