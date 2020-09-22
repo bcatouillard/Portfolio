@@ -62,4 +62,8 @@ html(lang="fr")
     script(src="js/navbar.js")
     script(src="js/showHero.js")
     script(src="js/to_top.js")
+    if anchor
+      script
+        window.onload = window.location.hash = '#{anchor}';
     script(defer src="assets/@fortawesome/fontawesome-free/js/all.min.js")
+    script(src='https://www.google.com/recaptcha/api.js')  
