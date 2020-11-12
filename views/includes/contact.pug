@@ -13,25 +13,25 @@ section.section.contact__root#contact
                 div.field
                     label.label(for="name") Nom :
                     div.control
-                        input.input(type="text" name="inputName" placeholder="Nom :" required)
+                        input.input(type="text" name="inputName" placeholder="Nom :" aria-label="Nom" required )
                 div.field
                     label.label(for="firstName") Prénom :
                     div.control
-                        input.input(type="text" name="inputFirstName" placeholder="Prénom :" required)
+                        input.input(type="text" name="inputFirstName" placeholder="Prénom :" aria-label="Prénom" required)
                 div.field
                     label.label(for="email") Email :
                     div.control.has-icons-left
-                        input.input(type="email" name="inputEmail" placeholder="Email :" required)
+                        input.input(type="email" name="inputEmail" placeholder="Email :" aria-label="Email" required)
                         span.icon.is-small.is-left
                             i.fas.fa-envelope
                 div.field
                     label.label(for="subject") Sujet :
                     div.control
-                        input.input(type="text" name="inputSubject" placeholder="Sujet :" required)
+                        input.input(type="text" name="inputSubject" placeholder="Sujet :" aria-label="Sujet" required)
                 div.field
                     label.label(for="bodyMail") Message :
                     div.control
-                        textarea.textarea(cols="20", rows="3",name="inputBodyMail" placeholder="Votre message :" required)
+                        textarea.textarea(cols="20", rows="3",name="inputBodyMail" placeholder="Votre message :" aria-label="Message" required)
                 div.field
                     div.g-recaptcha(data-sitekey="6Le1h4cUAAAAAMSPt_r_q71DGOcy8OUTB2xN4O5l")
                 div.field.is-grouped
