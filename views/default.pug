@@ -67,3 +67,15 @@ html(lang="fr")
         window.onload = window.location.hash = '#{anchor}';
     script(defer src="assets/@fortawesome/fontawesome-free/js/all.min.js")
     script(defer src='https://www.google.com/recaptcha/api.js')  
+
+
+
+    script(type="application/ld+json").
+      {
+        "@context":"https://schema.org",
+        "@type":"Website",
+        "@id": "https://www.bcatouillard.ovh",
+        "name": "Benjamin Catouillard",
+        "description": "Bienvenue sur le portfolio de Benjamin Catouillard"
+      }
+
