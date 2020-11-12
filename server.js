@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const favicon = require('serve-favicon');
 const controller = require('./src/controllers/homeController');
+const compression = require("compression");
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,6 +15,8 @@ app.set('view engine', 'pug');
 //app.use('trust proxy');
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+app.use(compression())
 
 // serve static files from the `public` folder
 app.use(express.static(__dirname + '/public'));
