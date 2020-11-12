@@ -1,7 +1,8 @@
 const dotenv = require('dotenv').config().parsed
 
 module.exports = {
-    handleContactForm: function(req) {
+    handleContactForm: function(req, res) {
+        let message = ""
         const nodemailer = require('nodemailer');
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -31,10 +32,16 @@ module.exports = {
 
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
-                console.log(error)
+                message = "Le message n'a pas pu être envoyé"
             } else {
-                console.log(info)
+                message = "Le message a été envoyer avec succès !"
             }
         });
+        res.render('default', {
+            title:  'Accueil',
+            description: 'Bienvenue sur le Portfolio de Benjamin Catouillard',
+            message: true,
+            anchor: "contact"
+        })
     }
 }
