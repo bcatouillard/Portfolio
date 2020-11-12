@@ -1,0 +1,45 @@
+html{
+    background-color: $color-main;
+    overflow-y: unset;
+
+    body{
+        display: flex;
+        flex-direction: column;
+        min-height: 99.4vh;
+    }
+
+    section{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.return-top{
+    display: none;
+    right: 5%;
+    top: 80%;
+    position: fixed;
+    z-index: 10;
+
+    li{
+        a{
+            color: $color-white;
+
+            &:hover{
+                color: $color-hover;
+            }
+        }
+    }
+}
+
+p,h1,h2,h3,h4,strong{
+    color: $color-white!important;
+}
+
+@media (max-width: $mobile){
+    .only-desk{
+        display: none;
+    }
+}

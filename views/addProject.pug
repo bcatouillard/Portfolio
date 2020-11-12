@@ -1,0 +1,42 @@
+doctype html
+html(lang="fr")
+    head
+        title Benjamin Catouillard - #{title}
+        block css
+            link(rel='stylesheet', href='/css/style.css')
+            link(rel='stylesheet', href='/css/admin.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes")
+        meta(name="Content-Type" content="text/html; charset=utf-8")
+        meta(name="description" content=description)
+        meta(name="robots" content="NOINDEX,NOFOLLOW")
+    body
+
+        section.section.login__root#login
+            div.container.login__container
+                h2.title.is-3 Ajouter un projet
+                form.login__root
+                    div.field
+                        div.control
+                            input.input#title(type="text" placeholder="Titre du projet :" required)
+                    div.field
+                        div.control
+                            input.input#shortDescription(type="text" placeholder="Description courte :" required)
+                    div.field
+                        div.control
+                            textarea.textarea#description(cols="20", rows="3",placeholder="Description longue :" required)
+                    div.field.is-grouped
+                        div.select
+                            select#technosStyle
+                                option CSS
+                                option SASS
+                        div.select
+                            select#technosBack
+                                option PHP
+                                option Nodejs
+                        div.select
+                            select#technosFront
+                                option Aucune
+                                option Javascript
+                    div.field
+                        div.control
+                            button.button.is-link.is-fullwidth Ajouter

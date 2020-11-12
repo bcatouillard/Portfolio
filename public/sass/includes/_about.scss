@@ -1,0 +1,45 @@
+.about{
+    &__columns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+
+        .column{
+
+            &:last-child{
+                margin: 30px;
+            }
+
+            img{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+
+@media (min-width: $desktop){
+    .about{
+        &__columns{
+            flex-flow: row wrap;
+            text-align: center;
+
+            .column{
+
+                &:last-child{
+                    margin: unset;
+                }
+
+                p{
+                    color: $color-white;
+                    text-align: left;
+
+                    strong{
+                        color: $color-white!important;
+                    }
+                }
+            }
+        }
+    }
+}

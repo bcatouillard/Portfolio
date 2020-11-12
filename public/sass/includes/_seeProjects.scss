@@ -1,0 +1,32 @@
+.seeProject{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 50%;
+        }
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: $desktop){
+    .seeProject{
+        &__container{
+            flex-direction: row;
+            justify-content: center;
+
+            img{
+                margin-right: 20px;
+            }
+        }
+    }
+}

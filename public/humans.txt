@@ -8,9 +8,9 @@
     Linkedin : https://www.linkedin.com/in/bcatouillard/
     Github : https://github.com/bcatouillard
     Location : Lille, France
-    Email : contact[at]bcatouillard.ovh
-
+    Email : catouillard.benjamin@gmail.com
+    
 # TECHNOLOGY COLOPHON
     Last update : 2020/08/14
     CSS3, HTML5, JavaScript, Bulma (Framework CSS)
-    Express, NodeJS
+    Express, NodeJS, Pug

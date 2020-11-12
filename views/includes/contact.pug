@@ -1,0 +1,44 @@
+section.section.contact__root#contact
+    div.container.contact__container
+        h2.title.is-3 Contactez moi !
+        if  message == true
+            div.notification.is-primary
+                | Le message a été envoyé avec succès !
+        else if message == false
+            div.notification.is-danger
+                | Le message n'a pas pu être envoyé...
+
+        div.form__root
+            form.form__container(method="post" action="/#contact")
+                div.field
+                    label.label(for="name") Nom :
+                    div.control
+                        input.input(type="text" name="inputName" placeholder="Nom :" aria-label="Nom" required )
+                div.field
+                    label.label(for="firstName") Prénom :
+                    div.control
+                        input.input(type="text" name="inputFirstName" placeholder="Prénom :" aria-label="Prénom" required)
+                div.field
+                    label.label(for="email") Email :
+                    div.control.has-icons-left
+                        input.input(type="email" name="inputEmail" placeholder="Email :" aria-label="Email" required)
+                        span.icon.is-small.is-left
+                            i.fas.fa-envelope
+                div.field
+                    label.label(for="subject") Sujet :
+                    div.control
+                        input.input(type="text" name="inputSubject" placeholder="Sujet :" aria-label="Sujet" required)
+                div.field
+                    label.label(for="bodyMail") Message :
+                    div.control
+                        textarea.textarea(cols="20", rows="3",name="inputBodyMail" placeholder="Votre message :" aria-label="Message" required)
+                div.field
+                    div.g-recaptcha(data-sitekey="6Le1h4cUAAAAAMSPt_r_q71DGOcy8OUTB2xN4O5l")
+                div.field.is-grouped
+                    div.control
+                        button.button.is-link(type="submit") Envoyer
+                    div.control
+                        button.button.is-link
+                            span.icon.is-small
+                                i.far.fa-address-card
+                            | Voir mon CV
