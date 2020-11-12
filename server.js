@@ -35,13 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    controller.handleContactForm(req)
-    res.render('default', {
-        title:  'Accueil',
-        description: 'Bienvenue sur le Portfolio de Benjamin Catouillard',
-        message: true,
-        anchor: "contact"
-    })
+    controller.handleContactForm(req, res)
 })
 
 app.get('/projects/', (req, res) => {
@@ -51,6 +45,7 @@ app.get('/projects/', (req, res) => {
     });
 });
 
+/* 
 app.get('/admin', (req, res) => {
     res.render('admin', {
         title: 'Admin',
@@ -64,3 +59,4 @@ app.get('/admin/projects', (req, res) => {
         description: 'Bienvenue sur la partie administration de mon Portfolio - ajout d\'un projet'
     })
 });
+*/
