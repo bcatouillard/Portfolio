@@ -4,6 +4,7 @@ const app = express();
 const favicon = require('serve-favicon');
 const helmet = require('helmet');
 const controller = require('./src/controllers/homeController');
+const compression = require("compression");
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,6 +19,8 @@ app.use(helmet.hidePoweredBy());
 
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+app.use(compression())
 
 // serve static files from the `public` folder
 app.use(express.static(__dirname + '/public'));
