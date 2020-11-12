@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const favicon = require('serve-favicon');
+const helmet = require('helmet');
 const controller = require('./src/controllers/homeController');
 
 var bodyParser = require("body-parser");
@@ -12,6 +13,9 @@ app.set('view engine', 'pug');
 
 // Use HTTPS
 //app.use('trust proxy');
+
+app.use(helmet.hidePoweredBy());
+
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
