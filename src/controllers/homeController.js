@@ -8,7 +8,7 @@ module.exports = {
             service: 'gmail',
             auth: {
                 user: dotenv.FORM_ACCOUNT,
-                pass: dotenv.FORM_PASSWD2
+                pass: dotenv.FORM_PASSWD
             }
         });
 
