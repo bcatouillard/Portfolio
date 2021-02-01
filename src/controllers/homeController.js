@@ -1,8 +1,9 @@
 const dotenv = require('dotenv').config().parsed
+const fetch = require('node-fetch')
+let message = true
 
 module.exports = {
-    handleContactForm: function(req, res) {
-        let message = ""
+    handleContactForm: async function(req, res){
         const nodemailer = require('nodemailer');
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -19,8 +20,7 @@ module.exports = {
         let content = req.body.inputBodyMail
         let captcha = req.body['g-recaptcha-response']
         const secretKey = dotenv.API_CAPTCHA_KEY
-        const verificatioUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + captcha
-
+        const verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + captcha
 
         const mailOptions = {
             from: email,
@@ -30,17 +30,36 @@ module.exports = {
             replyTo: email
         };
 
-        transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-                message = "Le message n'a pas pu être envoyé"
-            } else {
-                message = "Le message a été envoyer avec succès !"
-            }
-        });
+        this.redirectToContact(res, message, transporter, mailOptions, verificationUrl)
+    },
+
+    checkCaptchaURL: async function(transporter, mailOptions, verificationUrl){
+        return await fetch(verificationUrl)
+            .then(res => res.json())
+            .then(body => {
+                if(body.success !== undefined && !body.success) {
+                    message = false
+                    throw new Error("Captcha error")
+                } else {
+                    transporter.sendMail(mailOptions, function(error){
+                        if (!error) {
+                            message = false
+                            throw new Error("Mail error")
+                        } else {
+                            console.log(error)
+                        }
+                    })
+                }
+            })
+            .catch(err => console.log(err))
+    },
+
+    redirectToContact: async function(res, transporter, mailOptions, verificationUrl){
+        await this.checkCaptchaURL(transporter, mailOptions, verificationUrl)
         res.render('default', {
             title:  'Accueil',
             description: 'Bienvenue sur le Portfolio de Benjamin Catouillard',
-            message: true,
+            message: message,
             anchor: "contact"
         })
     }
