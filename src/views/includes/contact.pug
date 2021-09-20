@@ -1,18 +1,16 @@
 section.section.contact__root#contact
     div.container.contact__container
         h2.title.is-3 Contactez moi !
-        p Mail : catouillard.benjamin@gmail.com
-        p Tel : 06 16 02 77 80
-        if  message == true
+        if  showMessage == true
             div.notification.is-primary
                 | Le message a été envoyé avec succès !
-        else if message == false
+        else if showMessage == false
             div.notification.is-danger
                 | Le message n'a pas pu être envoyé...
 
 
         
-//
+
         div.form__root
             form.form__container(method="post" action="/#contact")
                 div.field
@@ -38,7 +36,7 @@ section.section.contact__root#contact
                     div.control
                         textarea.textarea(cols="20", rows="3",name="inputBodyMail" placeholder="Votre message :" aria-label="Message" required)
                 div.field
-                    div.g-recaptcha(data-sitekey="6Le1h4cUAAAAAMSPt_r_q71DGOcy8OUTB2xN4O5l")
+                    div.g-recaptcha(data-sitekey="6LeqYs8ZAAAAAB6sKis0Wz-2M97TdfJHLv8Bd36h")
                 div.field.is-grouped
                     div.control
                         button.button.is-link(type="submit") Envoyer
@@ -47,4 +45,3 @@ section.section.contact__root#contact
                             span.icon.is-small
                                 i.far.fa-address-card
                             | Voir mon CV
-//

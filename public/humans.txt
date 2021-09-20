@@ -11,6 +11,6 @@
     Email : catouillard.benjamin@gmail.com
     
 # TECHNOLOGY COLOPHON
-    Last update : 2020/08/14
+    Last update : 2021/09/20
     CSS3, HTML5, JavaScript, Bulma (Framework CSS)
     Express, NodeJS, Pug
