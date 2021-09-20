@@ -16,7 +16,7 @@ function showHeroTitle() {
     if (countHeroTitle < maxCountHeroTitle) {
         countHeroTitle++;
         heroTitleConcat += heroTitle[countHeroTitle - 1];
-        document.getElementById("heroTitle").innerHTML = heroTitleConcat;
+        document.querySelector("#heroTitle").innerHTML = heroTitleConcat;
     }
 }
 
@@ -24,6 +24,6 @@ function showHeroSubtitle() {
     if (count < maxCountHeroSubtitle) {
         count++;
         heroSubtitleConct += heroSubtitle[count - 1];
-        document.getElementById("heroSubtitle").innerHTML = heroSubtitleConct;
+        document.querySelector("#heroSubtitle").innerHTML = heroSubtitleConct;
     }
 }

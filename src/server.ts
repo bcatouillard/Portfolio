@@ -36,8 +36,6 @@ app.use(express.static(__dirname + '/../public'));
 
 // serve assets from node_modules
 app.use('/assets', express.static(__dirname + '/../../node_modules/'));
-console.log(__dirname + '/../../node_modules/');
-
 
 // Routing / to default.pug and set the title to Accueil
 app.get('/', (req, res) => {

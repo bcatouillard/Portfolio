@@ -1,10 +1,15 @@
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+import nodemailer from 'nodemailer';
 const privateEnv = dotenv.config().parsed;
-let message = true
 
-export const handleContactForm = async (req, res) => {
-    const nodemailer = require('nodemailer');
+export const handleContactForm = (req, res) => {
+    let showMessage = true;
+    const { inputName, inputFirstName, inputEmail, inputSubject, inputBodyMail } = req.body;
+    const captcha = req.body['g-recaptcha-response'];
+    const secretKey = privateEnv.API_CAPTCHA_KEY;
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
+
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -12,54 +17,48 @@ export const handleContactForm = async (req, res) => {
             pass: privateEnv.FORM_PASSWD
         }
     });
-
-    let name = req.body.inputName
-    let firstName = req.body.inputFirstName
-    let email = req.body.inputEmail
-    let subject = req.body.inputSubject
-    let content = req.body.inputBodyMail
-    let captcha = req.body['g-recaptcha-response']
-    const secretKey = privateEnv.API_CAPTCHA_KEY
-    const verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + captcha
-
     const mailOptions = {
-        from: email,
+        from: inputEmail,
         to: privateEnv.FORM_MAIL,
-        subject: subject,
-        text: "De la part de " + name + " " + firstName + "\n" +  content,
-        replyTo: email
+        subject: inputSubject,
+        text: `De la part de ${inputName} ${inputFirstName} \n ${inputBodyMail}`,
+        replyTo: inputEmail
     };
 
-    redirectToContact(res, transporter, mailOptions, verificationUrl)
+    redirectToContact(res, transporter, mailOptions, verificationUrl, showMessage);
 }
 
-const checkCaptchaURL = async (transporter, mailOptions, verificationUrl) =>{
-    return await fetch(verificationUrl)
-        .then(res => res.json())
-        .then(body => {
-            if(body.success !== undefined && !body.success) {
-                message = false
-                throw new Error("Captcha error")
-            } else {
-                transporter.sendMail(mailOptions, function(error){
-                    if (!error) {
-                        message = false
-                        throw new Error("Mail error")
-                    } else {
-                        console.log(error)
-                    }
-                })
-            }
-        })
-        .catch(err => console.log(err))
+const checkCaptchaURL = (transporter, mailOptions, verificationUrl: string, showMessage: boolean) =>{
+    try {
+        return fetch(verificationUrl)
+            .then(res => res.json())
+            .then(body => {
+                if(body.success) {
+                    transporter.sendMail(mailOptions, function(error){
+                        if (!error) {
+                            showMessage = false;
+                            throw new Error("Mail error");
+                        } else {
+                            console.log(error);
+                        }
+                    });
+                } else {
+                    showMessage = false;
+                    throw new Error("Captcha error");
+                }
+            })
+            .catch(err => console.log(err));
+    } catch (error) {
+        console.error(error);
+    }
 }
 
-const redirectToContact = async (res, transporter, mailOptions, verificationUrl) => {
-    await checkCaptchaURL(transporter, mailOptions, verificationUrl)
+const redirectToContact = (res, transporter, mailOptions, verificationUrl: string, showMessage: boolean) => {
+    checkCaptchaURL(transporter, mailOptions, verificationUrl, showMessage)
     res.render('default', {
         title:  'Accueil',
         description: 'Bienvenue sur le Portfolio de Benjamin Catouillard',
-        message: message,
+        showMessage: showMessage,
         anchor: "contact"
-    })
+    });
 }
